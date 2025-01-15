@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Match Pair Game</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&family=Playwrite+VN:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="game-container">
-        <div class="game-board" id="gameBoard"></div>
-        <div class="attempt-counter">
-            Attempts: <span id="attemptCount">0</span>
-        </div>
-        <button onclick="startGame()">Start New Game</button>
+      <div class="category-selector">
+        <label for="category" class="category">Select Category:</label>
+        <select id="category" onchange="loadLevels()">
+          <option value="fruits">Fruits</option>
+          <option value="emojis">Emojis</option>
+          <option value="alphabets">Alphabets</option>
+          <option value="numbers">Numbers</option>
+        </select>
+      </div>
+      <div class="level-selector">
+        <label for="level">Select Level:</label>
+        <select id="level" onchange="startGame()"></select>
+      </div>
+      <div class="game-board" id="gameBoard"></div>
+      <div class="attempt-counter">
+        Attempts: <span id="attemptCount">0</span>
+      </div>
+      <button onclick="startGame()">Start New Game</button>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
